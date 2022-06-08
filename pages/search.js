@@ -3,6 +3,7 @@ import Footer from '../components/Footer';
 import { useRouter } from 'next/dist/client/router';
 import { format } from 'date-fns';
 import InfoCard from '../components/InfoCard';
+import Mapcomp from '../components/Mapcomp';
 
 function search({ searchResult }) {
   const router = useRouter();
@@ -44,7 +45,11 @@ function search({ searchResult }) {
             )}
           </div>
         </section>
+        <section className='xl:inline-flex xl:min-w-[600px]'>
+          <Mapcomp searchResult={searchResult} />
+        </section>
       </main>
+
       <Footer />
     </div>
   );
