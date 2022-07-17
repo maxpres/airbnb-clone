@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import InfoCard from '../components/InfoCard';
 import Mapcomp from '../components/Mapcomp';
 
-function search({ searchResult }) {
+function Search({ searchResult }) {
   const router = useRouter();
   const { location, startDate, endDate, noOfGuests } = router.query;
   const formattedStartDate = format(new Date(startDate), 'dd MMMM yy');
@@ -45,7 +45,7 @@ function search({ searchResult }) {
             )}
           </div>
         </section>
-        <section className='xl:inline-flex xl:min-w-[600px]'>
+        <section className='xl:inline-flex xl:min-w-[400px]'>
           <Mapcomp searchResult={searchResult} />
         </section>
       </main>
@@ -55,7 +55,7 @@ function search({ searchResult }) {
   );
 }
 
-export default search;
+export default Search;
 
 export async function getServerSideProps() {
   const searchResult = await fetch('https://links.papareact.com/isz').then(

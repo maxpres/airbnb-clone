@@ -19,15 +19,9 @@ function Mapcomp({ searchResult }) {
     latitude: center.latitude - 0.15,
     zoom: 11,
   });
-  // console.log(center);
-  //{longitude: -0.08452479386870405, latitude: 51.50996326851979}
-
-  // console.log(center.longitude);
-  //-0.08452479386870405
 
   const [selectedLocation, setSelectedLocation] = useState({});
-  console.log(selectedLocation);
-  //{img: 'https://links.papareact.com/xqj', location: 'Private room in center of London', title: 'Stay at this spacious Edwardian House', description: '1 guest · 1 bedroom · 1 bed · 1.5 shared bthrooms · Wifi · Kitchen · Free parking · Washing Machine', star: 4.73, …}
+
   return (
     <ReactMapGL
       mapStyle='mapbox://styles/maxpres/cl45e1y91009h14p7ax0alwew'
@@ -44,13 +38,13 @@ function Mapcomp({ searchResult }) {
             offSetTop={-10}
           >
             <p
-              className='cursor-pointer animate-bounce'
+              className='cursor-pointer animate-bounce text-2xl'
               onClick={() => setSelectedLocation(result)}
             >
-              📍
+              📌
             </p>
           </Marker>
-          {/* Popup to show if we click on the marker */}
+
           {selectedLocation.long === result.long ? (
             <Popup
               onClose={() => setSelectedLocation({})}
